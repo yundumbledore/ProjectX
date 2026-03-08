@@ -20,7 +20,7 @@ except ImportError:
 device = torch.device("cuda" if torch.cuda.is_available() else "mps" if torch.backends.mps.is_available() else "cpu")
 
 ### ------ 1. Default Settings ------
-USE_GUI = True 
+USE_GUI = False 
 Run_pipeline = ['Inference', 'Imaging']
 
 data_path = './Example_Data/P001_PET_incl_bones_coronal_116_denoised_adjusted.h5'
