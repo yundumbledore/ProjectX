@@ -127,6 +127,5 @@ def parametric_imaging(slice_index, mask_path, estimates_path, parameter_name, s
         k4 = estimates[:,:,3]
         statistics = k4.mean(axis = 1)
 
-    # Save & Create the parent directory if it doesn't exist
-    save_path.parent.mkdir(parents=True, exist_ok=True)
+    # Save
     parametric_map_interactive(statistics, mask_slice, spacing, parameter_name, save_path)

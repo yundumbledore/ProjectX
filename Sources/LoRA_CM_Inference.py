@@ -177,6 +177,5 @@ def inference(data_path, ROI_voxel_idx_path, model_path, output_path, device, ba
             
         print(f'✅ {organ} is processed!!!')
     
-    # Save & Create the parent directory if it doesn't exist
-    output_path.parent.mkdir(parents=True, exist_ok=True)
+    # Save
     np.savez_compressed(output_path, arr = final_estimates)
