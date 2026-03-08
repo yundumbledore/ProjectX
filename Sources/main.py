@@ -15,7 +15,7 @@ def run_inference(data_path, ROI_voxel_idx_path, output_path, save_full_posterio
                 }
 
     ## ------ Define LoRA-CM Sampling Details ------
-    batch_size = 1000
+    batch_size = 100
     sample_size = 1000
 
     ## ------ Estimate Parameters ------
