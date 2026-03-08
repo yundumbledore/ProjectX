@@ -8,14 +8,10 @@ import warnings; warnings.filterwarnings("ignore")
 # Ensure local sources are discoverable
 dir_path = os.path.join(os.getcwd(), 'Sources')
 sys.path.append(dir_path)
+from main import run_inference, run_imaging
 
-# Mock imports - ensure main.py exists in ./Sources
-try:
-    from main import run_inference, run_imaging
-except ImportError:
-    # Fallback for demonstration if main.py isn't found
-    def run_inference(*args): print(f"DEBUG: Running Inference with {args}")
-    def run_imaging(*args): print(f"DEBUG: Running Imaging with {args}")
+# Create a folder to save results
+os.makedirs('Results', exist_ok=True)
 
 device = torch.device("cuda" if torch.cuda.is_available() else "mps" if torch.backends.mps.is_available() else "cpu")
 
